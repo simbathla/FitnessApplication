@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: activity-service
+  data:
+    mongodb:
+      uri: mongodb+srv://simbathla_db_user:MongoDB%40123@cluster0.bwbm8bg.mongodb.net/
+      database: fitnessactivity
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      topic: ActivityQueue
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+server:
+  port: 8082
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+

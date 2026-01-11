@@ -1,0 +1,25 @@
+server:
+  port: 8083
+
+spring:
+
+  data:
+    mongodb:
+      uri: mongodb+srv://simbathla_db_user:MongoDB%40123@cluster0.bwbm8bg.mongodb.net/fitnessrecommendations
+      database: fitnessrecommendations
+
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      topic: ActivityQueue
+      groupId: group-1
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+gemini:
+  api:
+    url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent
+    key: AIzaSyDSw6Wf9_fzhrXN6Psm_qpk5afxz0arsRU
