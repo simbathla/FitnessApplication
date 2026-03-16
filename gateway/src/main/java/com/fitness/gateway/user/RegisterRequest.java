@@ -1,11 +1,9 @@
-package com.fitness.userservice.dto;
+package com.fitness.gateway.user;
 
-import com.fitness.userservice.model.UserRole;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
-import lombok.NonNull;
 
 import java.time.LocalDateTime;
 

@@ -32,6 +32,11 @@ public class  UserController {
 
     @GetMapping("/{userId}/validate")
     public ResponseEntity<Boolean> validateUser(@PathVariable  String userId){
-        return ResponseEntity.ok(userService.existByUserId(userId));
+        return ResponseEntity.ok(userService.existsByUserId(userId));
+    }
+
+    @GetMapping("/{keycloakId}/validateByKeycloakId")
+    public ResponseEntity<Boolean> validateUserWithKeycloakId(@PathVariable String keycloakId){
+        return ResponseEntity.ok(userService.existsByKeycloakId(keycloakId));
     }
 }
