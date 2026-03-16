@@ -8,9 +8,17 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface UserRepository extends JpaRepository<User, String> {
 
     @Query("SELECT CASE WHEN COUNT(u) > 0 THEN TRUE ELSE FALSE END FROM User u WHERE u.email = :email")
     boolean existsByEmail(@Param("email") String email);
+
+    Boolean existsByKeycloakId(String keycloakId);
+
+    User findByEmail(@NotBlank(message = "Email is required") @Email(message = "Invalid Email format") String email);
+
+    Optional<User> findByKeycloakId(String keycloakId);
 }

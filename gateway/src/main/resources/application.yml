@@ -3,3 +3,49 @@ spring:
     name: api-gateway
   config:
     import: optional:configserver:http://localhost:8888
+
+#management:
+#  endpoint:
+#    gateway:
+#      access: unrestricted
+#  endpoints:
+#    web:
+#      base-path: /actuator
+#      exposure:
+#        include: "gateway,health,info"
+#
+#spring:
+#  application:
+#    name: api-gateway
+#  cloud:
+#    config:
+#      enabled: false
+#      import-check:
+#        enabled: false
+#    gateway:
+#      server:
+#        webflux:
+#          routes:
+#            - id: user-service
+#              uri: lb://USER-SERVICE
+#              predicates:
+#                - Path=/api/users/**
+#
+#            - id: activity-service
+#              uri: lb://ACTIVITY-SERVICE
+#              predicates:
+#                - Path=/api/activities/**
+#
+#            - id: ai-service
+#              uri: lb://AI-SERVICE
+#              predicates:
+#                - Path=/api/recommendations/**
+#
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/
+#
+#server:
+#  port: 8080
+
